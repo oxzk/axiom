@@ -14,6 +14,6 @@ log.maxDays = 3
 [[proxies]]
 name = "vnc"
 type = "tcp"
-localIP = "127.0.0.1"
+localIP = "chrome"
 localPort = 3000
 remotePort = 30000
