@@ -17,11 +17,15 @@ jobs:
   - script: |
       pwd
       ls -la
+      pip install DrissionPage
       docker compose up -d
       ls -la data
       # cd data/chrome && ls -la
-      # cat data/frpc/frpc.log
-      docker exec chrome bash -c "ps -ef |grep chrome"
-      sleep 120
+      docker logs frpc
+      docker exec chrome bash -c "ps -ef |grep '*chrome*'"
+      python test.py
+      sleep 5
     displayName: 'Run'
+
+    
 
