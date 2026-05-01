@@ -20,10 +20,10 @@ jobs:
       pip install DrissionPage
       docker compose up -d
       ls -la data
-      # cd data/chrome && ls -la
+      ss -tlnp
       docker logs frpc
-      docker exec chrome bash -c "ps -ef |grep '*chrome*'"
-      python test.py
+      docker exec chrome bash -c "ps -ef"
+      # python test.py
       sleep 5
     displayName: 'Run'
 
