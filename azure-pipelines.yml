@@ -18,7 +18,7 @@ jobs:
       pwd
       ls -la
       docker compose up -d
-      ls -la
+      ls -la data
       # cd data/chrome && ls -la
       # cat data/frpc/frpc.log
       docker exec chrome bash -c "ls -la /config"
