@@ -7,8 +7,8 @@ services:
       - PGID=1000
       - TZ=Etc/UTC
       - CHROME_CLI="--remote-debugging-address=0.0.0.0 --remote-debugging-port=9222 --remote-allow-origins='*'"
-    volumes:
-      - ./data/chrome/config:/config
+    # volumes:
+    #   - ./data/chrome/config:/config
     ports:
       - 3000:3000
       - 3001:3001
