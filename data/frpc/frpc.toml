@@ -1,10 +1,10 @@
 # 台湾2 tw.2.frp.one:31110
-serverAddr = "35.229.198.112"
-serverPort = 7000
-user = "4ixySASGRMBSY51P2vphHDng"
+serverAddr = "vnc.u2640082.nyat.app"
+serverPort = 8088
+user = "s-01kl3m8kqed9y5"
 
 # 认证配置
-auth.token = "ChmlFrpToken"
+auth.token = "8kqeu6hhkgz93dixdgw58vo2schbd9y5"
 
 # 日志配置
 log.to = "/var/log/frpc.log"
@@ -16,4 +16,4 @@ name = "vnc"
 type = "tcp"
 localIP = "chrome"
 localPort = 3000
-remotePort = 30000
+remotePort = 32001
