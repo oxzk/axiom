@@ -18,8 +18,9 @@ jobs:
       pwd
       ls -la
       docker compose up -d
-      cd data/chrome && ls -la
-      cat data/frpc/frpc.log
+      ls -la
+      # cd data/chrome && ls -la
+      # cat data/frpc/frpc.log
       docker exec chrome bash -c "ls -la /config"
       sleep 120
     displayName: 'Run'
