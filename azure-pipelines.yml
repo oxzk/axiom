@@ -19,11 +19,11 @@ jobs:
       ls -la
       pip install DrissionPage
       docker compose up -d
+      ls la /app/user_data
       ss -tlnp | grep 9222
       lsof -i :9222
-      curl http://127.0.0.1:9222/json
-      docker exec -it chrome ps aux | grep chrome
-      docker exec -it chrome curl http://127.0.0.1:9222/json
+      docker exec chrome ps aux | grep chrome
+      docker exec chrome curl http://127.0.0.1:9222/json
       # python test.py
       sleep 5
     displayName: 'Run'
