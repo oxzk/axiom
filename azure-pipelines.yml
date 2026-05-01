@@ -18,6 +18,6 @@ jobs:
       ls -la
       python --version
       docker --version
-      docker-compose --version
+      docker compose --version
     displayName: 'Run'
 
