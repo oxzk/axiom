@@ -1,0 +1,29 @@
+services:
+  chrome:
+    image: lscr.io/linuxserver/chrome:latest
+    container_name: chrome
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+      - CHROME_CLI=https://www.linuxserver.io/ #optional
+    volumes:
+      - $(pwd)/data/chrome/config:/config
+    ports:
+      - 3000:3000
+      - 3001:3001
+    shm_size: "2gb"
+    restart: unless-stopped
+
+  frpc:
+    image: fatedier/frpc:v0.65.0
+    container_name: frpc
+    restart: unless-stopped
+    volumes:
+      - $(pwd)/data/frpc/frpc.toml:/etc/frp/frpc.toml
+      - $(pwd)/data/frpc/logs:/var/log
+    command: ["-c", "/etc/frp/frpc.toml"]
+    depends_on:
+      - chrome
+    extra_hosts:
+      - "host.docker.internal:host-gateway"

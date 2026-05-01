@@ -1,0 +1,19 @@
+# 台湾2 tw.2.frp.one:31110
+serverAddr = "35.229.198.112"
+serverPort = 7000
+user = "4ixySASGRMBSY51P2vphHDng"
+
+# 认证配置
+auth.token = "ChmlFrpToken"
+
+# 日志配置
+log.to = "/var/log/frpc.log"
+log.level = "info"
+log.maxDays = 3
+
+[[proxies]]
+name = "vnc"
+type = "tcp"
+localIP = "127.0.0.1"
+localPort = 3000
+remotePort = 30000
