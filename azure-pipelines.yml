@@ -4,6 +4,7 @@ trigger:
 jobs:
 
 - job: run
+  timeoutInMinutes: 10
 
   pool:
     vmImage: 'ubuntu-latest'
@@ -16,8 +17,6 @@ jobs:
   - script: |
       pwd
       ls -la
-      python --version
-      docker --version
-      docker compose --version
+      docker compose up 
     displayName: 'Run'
 

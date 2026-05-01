@@ -6,13 +6,15 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=Etc/UTC
-      - CHROME_CLI=https://www.linuxserver.io/ #optional
+      - CHROME_CLI="--remote-debugging-address=0.0.0.0 --remote-debugging-port=9222 --remote-allow-origins='*'"
     volumes:
       - $(pwd)/data/chrome/config:/config
     ports:
       - 3000:3000
       - 3001:3001
     shm_size: "2gb"
+    security_opt:
+      - seccomp=unconfined
     restart: unless-stopped
 
   frpc:
