@@ -19,9 +19,8 @@ jobs:
       ls -la
       pip install DrissionPage
       docker compose up -d
-      ls -la data
       ss -tlnp
-      docker logs frpc
+      curl http://127.0.0.1:9222/json
       docker exec chrome bash -c "ps -ef"
       # python test.py
       sleep 5
